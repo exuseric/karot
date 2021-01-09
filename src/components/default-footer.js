@@ -51,10 +51,7 @@ const DefaultFooter = () => {
           </li>
           <li>
             <a href='https://fauna.com/' target='_blank' rel='noopener noreferrer' className={`link ${style.resource}`}>
-              <img
-                src='https://images.ctfassets.net/po4qc9xpmpuh/7itYmeRxmVGIXwwGWHrQU3/e4ea73c2bebc64bd65d84964576515b9/fauna-logo-new-v2.svg'
-                alt='resource'
-              />
+              <StaticImage src='../images/fauna.png' alt='resource' />
               fauna
             </a>
           </li>
