@@ -1,0 +1,8 @@
+$paragraph: 'Cabin', Arial, Helvetica, sans-serif;
+$header: 'ubuntu',  'Times New Roman', Times, serif;
+
+$fonts: (
+	'body': $paragraph,
+	'title': $header,
+	'neutral': $paragraph,
+);

@@ -1,0 +1,19 @@
+@mixin center {
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+
+@mixin content($justify, $direction) {
+	display: flex;
+	justify-content: $justify;
+	align-items: center;
+	flex-flow: $direction wrap;
+}
+
+@mixin grid($direction, $gap) {
+	display: grid;
+	grid-auto-flow: $direction;
+	gap: $gap;
+	align-items: center;
+}

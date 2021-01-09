@@ -1,0 +1,28 @@
+$primary: #ea7626;
+$secondary: #753bbd;
+$highlight: #b16002;
+$light: #ffffff;
+$dark: #080808;
+$gray: #777777;
+$info: #0165fc;
+$success: #66ff00;
+$danger: #c51d34;
+
+
+$theme: (
+	'main-bg': $light,
+	'dark-bg': $dark,
+	'light-bg': $light,
+	'pop-bg': $secondary,
+	'button': $primary,
+	'header': $primary,
+	'subtitle': $secondary,
+	'text': $dark,
+	'light-text': $light,
+	'dark-text': $dark,
+	'neutral': $gray,
+	'info': $info,
+	'focus': $highlight,
+	'danger': $danger,
+	'success': $success,
+);

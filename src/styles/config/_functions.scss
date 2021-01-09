@@ -1,0 +1,11 @@
+@function color($name) {
+	@return map-get($theme, $name);
+}
+
+@function scale($value) {
+	@return map-get($scale, $value);
+}
+
+@function family($family) {
+	@return map-get($fonts, $family);
+}
