@@ -1,0 +1,46 @@
+@import './config/config';
+
+.header {
+	background-image:linear-gradient(45deg, #ea7626, #753bbd), url('../images/carrot.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-blend-mode: color;
+
+	min-height: 20rem;
+
+	h1 {
+		color: color('light-text');
+	}
+}
+
+.about_content {
+	padding: 4rem 0;
+
+	article {
+		padding: 1.5rem 0;
+	}
+}
+
+.list {
+	@include grid(row, 3rem);
+
+	.list_item {
+		@include grid(row, 0.8rem);
+
+		.list_item__no {
+			@include center;
+
+			width: 4rem;
+			height: 4rem;
+
+			margin: auto;
+			padding: 0;
+
+			color: color('light-text');
+			background-color: color('neutral');
+
+			border-radius: 50%;
+		}
+	}
+}
