@@ -1,0 +1,109 @@
+@import './config/config';
+
+// Global navigation styles
+.main_nav,
+.account_nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 100;
+
+  @include content(space-between, row);
+
+  width: 100vw;
+  height: $nav-height;
+  padding: 0.8rem 2rem;
+
+  background-color: color('light-bg');
+}
+
+.logo,
+.avatar
+{
+  padding: 0;
+  width: scale('lg');
+  height: scale('lg');
+
+  background-color: transparent;
+}
+
+.account_menu__btn,
+.main_menu__btn {
+    @include content(space-between, row);
+  width: fit-content;
+  height: scale('lg');
+  padding: 0;
+
+  color: color('neutral');
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.show_menu {
+  transform: translateY(0);
+}
+
+.hide_menu {
+  transform: translateY(-200%);
+}
+
+// Main navigation and elements
+
+.main_menu__links {
+  display: grid;
+  grid-auto-rows: 5rem;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-color: inherit;
+
+  li {
+    height: 4rem;
+    .main_menu__link {
+      @include content(flex-start, row);
+      padding: 0.85rem 1.5rem;
+    }
+  }
+
+}
+
+.login_btn {
+  @include center;
+
+  width: 70%;
+
+  margin: auto;
+  padding: 0.85rem;
+
+  color: color('focus');
+  border:1px solid currentColor;
+
+}
+
+// Account Navigation settings
+
+.account_nav {
+  border-bottom: 1px solid lighten($color: #9d9d9d, $amount: 15)
+}
+.account_menu__btn {
+
+  .avatar {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
