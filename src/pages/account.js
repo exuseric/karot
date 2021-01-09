@@ -4,7 +4,6 @@ import { Router } from '@reach/router'
 import AccountLayout from '../layouts/account-layout'
 import SEO from '../components/seo'
 import Home from '../auth-pages/account-details'
-import Loader from '../components/loader'
 
 import { login, isAuthenticated, getProfile } from '../utils/auth'
 
