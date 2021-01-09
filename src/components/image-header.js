@@ -12,3 +12,13 @@ const ImageHeader = ({ title }) => {
 }
 
 export default ImageHeader
+
+ImageHeader.defaultProps = {
+  title: '',
+  img: 'images/carrot.jpg'
+}
+
+ImageHeader.propTypes = {
+  title: PropTypes.string,
+  img: PropTypes.string
+}
