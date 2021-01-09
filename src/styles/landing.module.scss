@@ -1,0 +1,14 @@
+@import './config/config';
+
+.actions,
+.intro {
+	padding-top: 4rem;
+}
+.actions {
+	display: grid;
+	grid-auto-flow: row;
+	gap:2rem;
+
+	height: 100%;
+
+}
