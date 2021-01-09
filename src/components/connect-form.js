@@ -3,8 +3,11 @@ import React from 'react'
 import style from '../styles/form.module.scss'
 
 const ConnectForm = () => {
+  const handleSearch = (e) => {
+    e.preventDefault()
+  }
   return (
-    <form className={`${style.search_form}`}>
+    <form className={`${style.search_form}`} onSubmit={handleSearch}>
       <header className={`text-center header`}>
         <h3 className={`text-md subtitle ${style.cta}`}>Find a connection</h3>
       </header>
