@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import style from '../styles/navigation.module.scss'
 import OpenMenu from '../images/icons/open-menu.inline.svg'
 import CloseMenu from '../images/icons/close-menu.inline.svg'
+import LoginButton from './login-button'
 
 const Navigation = () => {
   const [links] = useState([
@@ -46,9 +47,7 @@ const Navigation = () => {
             </Link>
           </li>
         ))}
-        <Link to='/login' className={`link text-center text-md ${style.login_btn}`}>
-          login
-        </Link>
+        <LoginButton />
       </ul>
     </nav>
   )
