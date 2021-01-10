@@ -4,6 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'karot',
     description: 'A progressive information system for sharing and connecting information.',
+    siteUrl: `https://www.https://karot.netlify.app`,
     author: {
       name: 'Eric Maina',
       link: 'https://thisiseric.netlify.app'
