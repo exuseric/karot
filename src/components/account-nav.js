@@ -20,7 +20,7 @@ const Navigation = () => {
     }
   ])
 
-  const handleMenu = setIsMenu(!isMenu)
+  const handleMenu = () => setIsMenu(!isMenu)
   return (
     <nav className={`${style.account_nav}`}>
       <div className={`${style.logo}`}>

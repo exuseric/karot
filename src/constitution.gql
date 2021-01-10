@@ -1,0 +1,48 @@
+# Constitution Schema
+type Chapter {
+  number: Int!
+  title: String!
+  parts: [Part]
+  articles: [Article]
+}
+
+type Part {
+  chapter: Chapter! @relation
+  number: Int!
+  title: String!
+  content: [PartContent!]
+  filter: String!
+}
+
+type Article {
+  chapter: Chapter! @relation
+  title: String!
+  number: Int!
+  content: [Content!]
+  connections: [Connection]
+  filter: String!
+}
+
+type Content {
+  article: Article! @relation
+  value: [String!]!
+}
+
+type PartContent {
+  part: Part! @relation
+  value: [String!]!
+}
+
+type Connection {
+  article: Article! @relation
+  title: String!
+  connection: [String!]!
+}
+
+type Query {
+  findAllChapters: [Chapter!]!
+  findAllArticles: [Article!]!
+  findAllParts: [Part!]!
+  findArticleByChapterId(filter: String!): [Article!]!
+  findPartByChapterId(filter: String!): [Article!]!
+}

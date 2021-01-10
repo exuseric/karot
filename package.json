@@ -18,6 +18,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
     "auth0-js": "^9.14.0",
+    "axios": "^0.21.1",
     "gatsby": "^2.26.1",
     "gatsby-plugin-image": "^0.5.0",
     "gatsby-plugin-manifest": "^2.10.0",

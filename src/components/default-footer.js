@@ -45,7 +45,7 @@ const DefaultFooter = () => {
               rel='noopener noreferrer'
               className={`link ${style.resource}`}
             >
-              <StaticImage src='../images/icons/github.svg' alt='resource' />
+              <StaticImage src='../images/github.png' alt='resource' />
               github
             </a>
           </li>
@@ -57,7 +57,7 @@ const DefaultFooter = () => {
           </li>
           <li>
             <a href='https://auth0.com/' target='_blank' rel='noopener noreferrer' className={`link ${style.resource}`}>
-              <StaticImage src='../images/icon.png' alt='resource' />
+              <StaticImage src='../images/auth0.png' alt='resource' />
               auth0
             </a>
           </li>
