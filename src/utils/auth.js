@@ -3,7 +3,6 @@ import { navigate } from 'gatsby'
 
 // Check if the environment is a browser
 const isBrowser = typeof window !== 'undefined'
-const location = window.location.pathname
 
 // The user's information
 let user = {}
