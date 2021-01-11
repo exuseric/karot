@@ -13,29 +13,39 @@ const SEO = ({ description, title, lang, meta }) => {
       htmlAttributes={{ lang }}
       title={capitalize(title)}
       titleTemplate={`%s • ${siteMetaTitle}`}
+      link={[
+        {
+          rel: 'preconnect',
+          href: 'https://fonts.gstatic.com'
+        },
+        {
+          href: 'https://fonts.googleapis.com/css2?family=Cabin&family=DM+Serif+Display&display=swap',
+          rel: 'stylesheet'
+        }
+      ]}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription
         },
         {
-          property: `og:title`,
+          property: 'og:title',
           content: title
         },
         {
-          property: `og:type`,
-          content: `website`
+          property: 'og:type',
+          content: 'website'
         },
         {
-          property: `twitter:creator`,
+          property: 'twitter:creator',
           content: author.name
         },
         {
-          property: `twitter:title`,
+          property: 'twitter:title',
           content: title
         },
         {
-          property: `twitter:description`,
+          property: 'twitter:description',
           content: metaDescription
         }
       ].concat(meta)}
@@ -44,9 +54,9 @@ const SEO = ({ description, title, lang, meta }) => {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: 'en',
   meta: [],
-  description: ``
+  description: ''
 }
 
 SEO.propTypes = {

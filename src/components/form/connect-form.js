@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 
-import style from '../styles/form.module.scss'
+import { CstContext } from '../store/constitution'
+import style from '../../styles/form.module.scss'
 
 const ConnectForm = () => {
+  const { allConnections } = useContext(CstContext)
+  const [connections, setConnectios] = useState([])
   const handleSearch = (e) => {
     e.preventDefault()
+    const { value } = e.target
+    const connection = allConnections.filter((connection) => connection.tags.contains(value))
+    if (connection.length !== 0) {
+      setConnectios(connections)
+    }
   }
   return (
     <form className={`${style.search_form}`} onSubmit={handleSearch}>
@@ -29,6 +37,8 @@ const ConnectForm = () => {
           Find
         </button>
       </div>
+
+      <div className={`${style.form_connections}`}></div>
     </form>
   )
 }

@@ -1,13 +1,12 @@
 import React, { useContext, useState, useEffect } from 'react'
-import axios from 'axios'
 import { CstContext } from '../store/constitution'
 
 const Constitution = () => {
   const { GET_ALL_CHAPTERS } = useContext(CstContext)
   const [chapters, setChapters] = useState([])
 
-  const allChapters = async () => {
-    const res = await axios.get('https://localhost:8888/api/fauna-constitution/?q=getAllChapters')
+  const allChapters = () => {
+    const res = GET_ALL_CHAPTERS()
     console.log(res)
   }
   useEffect(() => {

@@ -5,8 +5,8 @@ const output = require('./utils/output')
 exports.handler = async (event) => {
   const users_token = process.env.FAUNA_CONSTITUTION_USER_CONNECTIONS_SECRET_KEY
   const main_token = process.env.FAUNA_CONSTITUTION_MAIN_SECRET_KEY
-  const params = event.multiValueQueryStringParameters.q[0]
-  const id = event.multiValueQueryStringParameters.id[0]
+  const params = event.queryStringParameters.q
+  const id = event.queryStringParameters.id
 
   if (params === 'getAllChapters') {
     try {
