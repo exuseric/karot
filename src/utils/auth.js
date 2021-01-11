@@ -17,9 +17,9 @@ const tokens = {
 // Implement auth0 only if the environment is a browser otherwise return an empty object
 const auth = isBrowser
   ? new auth0.WebAuth({
-      domain: process.env.AUTH0_DOMAIN,
-      clientID: process.env.AUTH0_CLIENT_ID,
-      redirectUri: process.env.AUTH0_CALLBACK,
+      domain: 'karot.us.auth0.com',
+      clientID: 'bTTtU3RRVZAkQGTkx6VPDhYSi2nccfR6',
+      redirectUri: 'https://karot.netlify.app/',
       responseType: 'token id_token',
       scope: 'openid profile email'
     })
@@ -30,7 +30,7 @@ export const isAuthenticated = () => {
     return
   }
 
-  return localStorage.getItem('isLoggedIn') === 'true'
+  return JSON.parse(localStorage.getItem('isLoggedIn')) === 'true'
 }
 
 export const login = () => {
@@ -54,7 +54,7 @@ const setSession = (cb = () => {}) => (err, authResult) => {
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
     user = authResult.idTokenPayload
-    localStorage.setItem('isLoggedIn', true)
+    localStorage.setItem('isLoggedIn', JSON.stringify(true))
     navigate('/account')
     cb()
   }
@@ -78,6 +78,6 @@ export const getProfile = () => {
 }
 
 export const logout = () => {
-  localStorage.setItem('isLoggedIn', false)
+  localStorage.setItem('isLoggedIn', JSON.stringify(false))
   auth.logout()
 }
