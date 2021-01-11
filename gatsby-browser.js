@@ -1,7 +1,7 @@
-import './src/styles/global.scss'
-
 import React from 'react'
 import { silentAuth } from './src/utils/auth'
+
+import './src/styles/global.scss'
 
 class SessionCheck extends React.Component {
   constructor(props) {
