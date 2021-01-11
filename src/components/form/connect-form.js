@@ -1,17 +1,24 @@
 import React, { useContext, useState } from 'react'
 
-import { CstContext } from '../store/constitution'
+import { CstContext } from '../../store/constitution'
 import style from '../../styles/form.module.scss'
+import EmptyCard from '../emptyCard'
 
 const ConnectForm = () => {
   const { allConnections } = useContext(CstContext)
   const [connections, setConnectios] = useState([])
+  const [notFound, setNotFound] = useState(false)
+  const [found, setFound] = useState(false)
   const handleSearch = (e) => {
     e.preventDefault()
     const { value } = e.target
     const connection = allConnections.filter((connection) => connection.tags.contains(value))
     if (connection.length !== 0) {
       setConnectios(connections)
+      setFound(true)
+    }
+    if (connection.length === 0) {
+      setNotFound(true)
     }
   }
   return (
@@ -38,7 +45,14 @@ const ConnectForm = () => {
         </button>
       </div>
 
-      <div className={`${style.form_connections}`}></div>
+      <div className={`${style.form_connections}`}>
+        {notFound ? <EmptyCard /> : null}
+        {found
+          ? connections.map((connection) => ({
+              /* <ConnectionCard /> */
+            }))
+          : null}
+      </div>
     </form>
   )
 }

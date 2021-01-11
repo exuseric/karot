@@ -14,17 +14,7 @@ const Constitution = () => {
     // if (data !== undefined) setChapters(data)
   }, [])
 
-  return (
-    <div className={`connections`}>
-      {/* {chapters.map((chapter) => (
-        <div className={`connection`} key={chapter.number}>
-          <header className={`header text-center`}>
-            <h2 className={`subtitle text-md`}>{`Chapter ${chapter.number}: ${chapter.title}`}</h2>
-          </header>
-        </div>
-      ))} */}
-    </div>
-  )
+  return <div className={`connections`}>{}</div>
 }
 
 export default Constitution

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import style from '../styles/landing.module.scss'
-import ConnectForm from './connect-form'
+import ConnectForm from './form/connect-form'
 import LoginButton from './login-button'
 
 const Landing = () => {

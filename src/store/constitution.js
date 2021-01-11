@@ -16,18 +16,17 @@ class CstProvider extends Component {
   }
 
   GET_ALL_CHAPTERS = async () => {
-    // const { data } = await axios.get('/api/fauna-constitution/?q=getAllChapters')
     const res = await fetch('/api/fauna-constitution/?q=getAllChapters')
     const data = await res.json()
-    console.log(data)
+    return data
   }
   GET_CONNECTIONS = async () => {
-    const res = await fetch('/api/fauna-constitution/?q=getConnections')
-    console.log(res)
+    const { data } = await axios.get('/api/fauna-constitution/?q=getConnections')
+    return data
   }
   GET_USER_CONNECTIONS = async () => {
-    const res = await fetch('/api/fauna-constitution/?q=getUserConnections')
-    console.log(res)
+    const { data } = await fetch('/api/fauna-constitution/?q=getUserConnections')
+    return data
   }
 
   render() {

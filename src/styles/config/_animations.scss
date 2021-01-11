@@ -1,9 +1,10 @@
-@keyframes flip {
-	from {
-		transform: rotateZ(0deg);
-		transform-origin: center center;
-	}
+@keyframes flip_up {
 	to {
-		transform: rotateZ(180deg);
+		transform: rotateZ(90deg);
+	}
+}
+@keyframes flip_down {
+	to {
+		transform: rotateZ(0deg);
 	}
 }

@@ -1,23 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Router } from '@reach/router'
 
 import AccountLayout from '../layouts/account-layout'
-import SEO from '../components/seo'
-import Home from '../auth-pages/account-details'
+import Home from '../auth-pages/account'
+import Details from '../auth-pages/account-details'
+import Login from '../components/account-loading'
 
 import { login, isAuthenticated, getProfile } from '../utils/auth'
 
 const Account = () => {
-  if (!isAuthenticated()) login()
+  const [user, setUser] = useState(null)
+  const [auth, setAuth] = useState(false)
+  // if (!isAuthenticated()) login()
 
-  const user = getProfile()
+  if (isAuthenticated()) {
+    setUser(getProfile())
+  }
 
   return (
     <AccountLayout>
-      <SEO title={`Account | ${user.nickname}`} />
-      <Router>
-        <Home path='/account/' user={user} />
-      </Router>
+      {auth ? (
+        <Router>
+          <Home path='/account/' user={user} />
+          <Details path='/acount/details' />
+        </Router>
+      ) : (
+        <Login />
+      )}
     </AccountLayout>
   )
 }

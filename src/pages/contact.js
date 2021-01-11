@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../styles/contact.module.scss'
 import Layout from '../layouts/default-layout'
-import ContactForm from '../components/contact-form'
+import ContactForm from '../components/form/contact-form'
 import ImageHeader from '../components/image-header'
 import SEO from '../components/seo'
 

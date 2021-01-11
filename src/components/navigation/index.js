@@ -7,6 +7,7 @@ import style from '../../styles/navigation.module.scss'
 import OpenMenu from '../../images/icons/open-menu.inline.svg'
 import CloseMenu from '../../images/icons/close-menu.inline.svg'
 import LoginButton from '../login-button'
+import LogoutButton from '../logout-button'
 import ButtonIcon from '../../images/icons/chevron-down.inline.svg'
 
 const Navigation = () => {
@@ -59,7 +60,7 @@ const Navigation = () => {
     <nav className={`${style.nav}`}>
       <div className={`${style.top}`}>
         <Link to='/' className={`${style.logo}`}>
-          <StaticImage src='../images/icon.png' alt='Logo' />
+          <StaticImage src='../../images/icon.png' alt='Logo' />
         </Link>
         <button className={`button ${style.nav__menu_btn}`} onClick={handleMenu}>
           {isMenu ? <CloseMenu className={`icon`} /> : <OpenMenu className={`icon`} />}
@@ -97,7 +98,7 @@ const Navigation = () => {
               </li>
             ))}
           </ul>
-          <LoginButton />
+          {auth ? <LogoutButton /> : <LoginButton />}
         </div>
       ) : null}
     </nav>

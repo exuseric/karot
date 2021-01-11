@@ -1,19 +1,9 @@
 import { Link } from 'gatsby'
 import React from 'react'
+import EmptyCard from '../components/emptyCard'
 import Header from '../components/header'
 
 import style from '../styles/account.module.scss'
-
-const DefaultCard = () => {
-  return (
-    <div className={`content-center ${style.details_card} ${style.details_card__default}`}>
-      <h2 className={`text-sm text-center`}>
-        <p>You haven't made any connections yet.</p>
-        <p>Any connections you make will appear here</p>
-      </h2>
-    </div>
-  )
-}
 
 const Details = ({ user }) => {
   return (
@@ -36,7 +26,7 @@ const Details = ({ user }) => {
       </div>
       <article className={`${style.details_connections}`}>
         <Header title='Connections' />
-        <DefaultCard />
+        <EmptyCard title="You haven't made any connections yet." tag='Any connections you make will appear here' />
 
         <Link to='/connections/' className={`button`}>
           Make a connection.

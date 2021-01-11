@@ -21,24 +21,3 @@
 .details_connections {
 	padding-top: 4rem;
 }
-
-
-.details_card {
-	width: 18rem;
-	min-height: 10rem;
-	height: max-content;
-
-	padding: 1.5rem;
-	margin: auto;
-
-	background-color: yellow;
-
-	border-radius: 0.8rem;
-
-}
-.details_card__default {
-	color: color('neutral');
-	background-color: lighten($color: #777777, $amount: 45);
-
-	border: 2px dotted currentColor;
-}

@@ -4,6 +4,9 @@ import { navigate } from 'gatsby'
 // Check if the environment is a browser
 const isBrowser = typeof window !== 'undefined'
 
+// Check the origin
+const origin = isBrowser && window.location.origin
+
 // The user's information
 let user = {}
 
@@ -19,7 +22,7 @@ const auth = isBrowser
   ? new auth0.WebAuth({
       domain: 'karot.us.auth0.com',
       clientID: 'bTTtU3RRVZAkQGTkx6VPDhYSi2nccfR6',
-      redirectUri: 'https://karot.netlify.app/',
+      redirectUri: `${origin}/account`,
       responseType: 'token id_token',
       scope: 'openid profile email'
     })

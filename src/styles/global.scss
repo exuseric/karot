@@ -128,10 +128,21 @@ body {
   pointer-events: none;
 }
 
-.icon_flip {
-  animation: flip 0.35s ease-out;
-}
-
 .content-center {
   @include center;
+}
+
+.info_card {
+	width: 18rem;
+	min-height: 10rem;
+	height: max-content;
+
+	padding: 1.5rem;
+	margin: auto;
+
+	color: color('neutral');
+	background-color: lighten($color: #777777, $amount: 45);
+
+	border: 2px dotted currentColor;
+	border-radius: 0.8rem;
 }

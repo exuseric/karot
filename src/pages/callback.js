@@ -4,7 +4,7 @@ import Header from '../components/header'
 import Layout from '../layouts/default-layout'
 import { useSiteMeta } from '../utils/siteMetadata'
 import Connect from '../images/icons/connectdevelop.inline.svg'
-import ConnectForm from '../components/connect-form'
+import ConnectForm from '../components/form/connect-form'
 import LoginButton from '../components/login-button'
 import { StaticImage } from 'gatsby-plugin-image'
 
