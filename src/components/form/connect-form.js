@@ -2,18 +2,18 @@ import React, { useContext, useState } from 'react'
 
 import { CstContext } from '../../store/constitution'
 import style from '../../styles/form.module.scss'
-import EmptyCard from '../emptyCard'
 import SearchIcon from '../../images/icons/search.inline.svg'
 
 const ConnectForm = () => {
-  const { allConnections } = useContext(CstContext)
+  const { GET_ALL_CHAPTERS } = useContext(CstContext)
   const [connections, setConnectios] = useState([])
   const [notFound, setNotFound] = useState(false)
   const [found, setFound] = useState(false)
+
   const handleSearch = (e) => {
     e.preventDefault()
     const { value } = e.target
-    const connection = allConnections.filter((connection) => connection.tags.contains(value))
+    const connection = GET_ALL_CHAPTERS().filter((connection) => connection.tags.contains(value))
     if (connection.length !== 0) {
       setConnectios(connections)
       setFound(true)
@@ -22,6 +22,7 @@ const ConnectForm = () => {
       setNotFound(true)
     }
   }
+
   return (
     <form className={`${style.search_form}`} onSubmit={handleSearch}>
       <div className={`${style.form_group}`}>

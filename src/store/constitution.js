@@ -8,24 +8,25 @@ class CstProvider extends Component {
     super(props)
     this.state = {
       allChapters: [],
-      allArticles: [],
-      allParts: [],
       allConnections: [],
-      chapter: {}
+      userConnections: []
     }
   }
 
   GET_ALL_CHAPTERS = async () => {
     const res = await fetch('/api/fauna-constitution/?q=getAllChapters')
     const data = await res.json()
+    this.setState({ allChapters: data })
     return data
   }
   GET_CONNECTIONS = async () => {
     const { data } = await axios.get('/api/fauna-constitution/?q=getConnections')
+    this.setState({ allConnections: data })
     return data
   }
   GET_USER_CONNECTIONS = async () => {
     const { data } = await fetch('/api/fauna-constitution/?q=getUserConnections')
+    this.setState({ userConnections: data })
     return data
   }
 
