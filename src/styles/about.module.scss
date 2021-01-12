@@ -17,19 +17,30 @@
 .about_content {
 	padding: 4rem 0;
 
-	article {
+	.content {
+		margin: 0 auto;
 		padding: 1.5rem 0;
+		max-width: 900px;
 	}
 }
 
 .list {
 	@include grid(row, 3rem);
 
+	@include media {
+		@include content(space-between, row);
+	}
+
 	.list_item {
 		@include grid(row, 0.8rem);
+		@include media {
+			@include content(space-between, row);
+		}
 
 		.list_item__no {
 			@include center;
+
+			justify-self: flex-start;
 
 			width: 4rem;
 			height: 4rem;

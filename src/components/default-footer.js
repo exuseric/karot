@@ -35,7 +35,6 @@ const DefaultFooter = () => {
               className={`link ${style.resource}`}
             >
               <StaticImage src='../images/netlify.png' alt='resource' />
-              netlify
             </a>
           </li>
           <li>
@@ -46,19 +45,16 @@ const DefaultFooter = () => {
               className={`link ${style.resource}`}
             >
               <StaticImage src='../images/github.png' alt='resource' />
-              github
             </a>
           </li>
           <li>
             <a href='https://fauna.com/' target='_blank' rel='noopener noreferrer' className={`link ${style.resource}`}>
               <StaticImage src='../images/fauna.png' alt='resource' />
-              fauna
             </a>
           </li>
           <li>
             <a href='https://auth0.com/' target='_blank' rel='noopener noreferrer' className={`link ${style.resource}`}>
               <StaticImage src='../images/auth0.png' alt='resource' />
-              auth0
             </a>
           </li>
         </ul>

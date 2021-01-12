@@ -1,14 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-import style from '../styles/form.module.scss'
+import style from '../styles/navigation.module.scss'
 import { login } from '../utils/auth'
 
-const LoginButton = () => {
+const LoginButton = ({ type }) => {
   return (
-    <button type='submit' className={`button btn-default ${style.form_submit}`} onClick={() => login()}>
+    <button type='button' className={`button btn-default`} id={`${type}`} onClick={() => login()}>
       Login
     </button>
   )
 }
 
 export default LoginButton
+
+LoginButton.defaultProps = {
+  type: ''
+}
+LoginButton.propTypes = {
+  type: PropTypes.string
+}

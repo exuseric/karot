@@ -4,7 +4,13 @@ import style from '../../styles/form.module.scss'
 
 const ContactForm = () => {
   return (
-    <form action='/success' name='karot contact form' id='contact-form' data-netlify='true' className={`${style.form}`}>
+    <form
+      action='/success'
+      name='karot contact form'
+      id='contact-form'
+      data-netlify='true'
+      className={`${style.contact_form}`}
+    >
       <input type='hidden' name='form-name' value='karot contact form' />
       <header className={`header text-center text-sm title ${style.header}`}>
         <h1>Tell us your thoughts.</h1>

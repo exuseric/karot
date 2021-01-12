@@ -35,7 +35,6 @@ const Landing = () => {
 
       <section className={`${style.actions}`}>
         <ConnectForm />
-        <LoginButton />
       </section>
     </div>
   )

@@ -1,6 +1,5 @@
 import React from 'react'
-import Navigation from '../components/navigation'
-import style from '../styles/account.module.scss'
+import Navigation from '../components/navigation/account-nav'
 
 const AccountLayout = ({ children }) => {
   return (

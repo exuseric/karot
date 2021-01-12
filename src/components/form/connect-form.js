@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import { CstContext } from '../../store/constitution'
 import style from '../../styles/form.module.scss'
 import EmptyCard from '../emptyCard'
+import SearchIcon from '../../images/icons/search.inline.svg'
 
 const ConnectForm = () => {
   const { allConnections } = useContext(CstContext)
@@ -23,36 +24,34 @@ const ConnectForm = () => {
   }
   return (
     <form className={`${style.search_form}`} onSubmit={handleSearch}>
-      <header className={`text-center header`}>
-        <h3 className={`text-md subtitle ${style.cta}`}>Find a connection</h3>
-      </header>
       <div className={`${style.form_group}`}>
-        <label htmlFor='find' className={`text-md text-center`}>
-          I want a connection for:
+        <label htmlFor='find' className={`text-md emphasis`}>
+          Find a connection
         </label>
-        <input
-          className={`${style.form_control}`}
-          type='search'
-          name='find'
-          id='find'
-          placeholder='Example: Loan, Tenant, School...'
-          required
-        />
-      </div>
-      <div className={`${style.form_group}`}>
-        <button type='submit' className={`button btn-default ${style.form_submit}`}>
-          Find
-        </button>
+        <div className={`${style.search_bar}`}>
+          <input
+            className={`${style.form_control}`}
+            type='search'
+            name='find'
+            id='find'
+            placeholder='Example: Loan, Tenant, School...'
+            required
+          />
+          <button type='submit' className={`content-center ${style.connect_submit}`}>
+            <SearchIcon className={`icon`} />
+          </button>
+        </div>
+        <div className={`${style.form_group}`}></div>
       </div>
 
-      <div className={`${style.form_connections}`}>
+      {/* <div className={`${style.form_connections}`}>
         {notFound ? <EmptyCard /> : null}
         {found
           ? connections.map((connection) => ({
-              /* <ConnectionCard /> */
+              <ConnectionCard />
             }))
           : null}
-      </div>
+      </div> */}
     </form>
   )
 }

@@ -1,23 +1,60 @@
 
 @import './config/config';
 
+.account {
+  @include media {
+    @include grid12;
+  }
+}
+
+.left,
+.center,
+.right {
+  width: 100%;
+}
+
+.left {
+  @include media {
+    grid-column: 1 / 3;
+    justify-self: flex-start;
+  }
+
+}
+
+.center {
+  @include media {
+    grid-column: 3 / 10;
+  }
+
+}
+
+.right {
+  @include media {
+    grid-column: 10 / -1;
+  }
+
+
+}
+
 // Details section styles
 .details_header {
-	@include grid(row, 2rem);
+  @include grid(row, 2rem);
 
-	.details_avatar {
+  .details_avatar {
+    width: 15rem;
+    height: 15rem;
 
-		border: 1px solid lighten($color: #777777, $amount: 25);
-		border-radius: 50%;
+    margin: auto;
 
-		overflow: hidden;
-	}
+    border: 1px solid lighten($color: #777777, $amount: 25);
+    border-radius: 0.8rem;
+
+    background-color: color('neutral');
+
+    overflow: hidden;
+  }
 }
 
 .details_details {
-	@include grid(row, 1rem);
-}
-
-.details_connections {
-	padding-top: 4rem;
+  @include grid(row, 1rem);
 }

@@ -33,7 +33,7 @@ export const isAuthenticated = () => {
     return
   }
 
-  return JSON.parse(localStorage.getItem('isLoggedIn')) === 'true'
+  return localStorage.getItem('isLoggedIn') === 'true'
 }
 
 export const login = () => {
@@ -57,7 +57,7 @@ const setSession = (cb = () => {}) => (err, authResult) => {
     tokens.idToken = authResult.idToken
     tokens.expiresAt = expiresAt
     user = authResult.idTokenPayload
-    localStorage.setItem('isLoggedIn', JSON.stringify(true))
+    localStorage.setItem('isLoggedIn', true)
     navigate('/account')
     cb()
   }
@@ -81,6 +81,6 @@ export const getProfile = () => {
 }
 
 export const logout = () => {
-  localStorage.setItem('isLoggedIn', JSON.stringify(false))
+  localStorage.setItem('isLoggedIn', false)
   auth.logout()
 }

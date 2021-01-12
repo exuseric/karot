@@ -3,8 +3,7 @@ import { Router } from '@reach/router'
 
 import AccountLayout from '../layouts/account-layout'
 import Home from '../auth-pages/account'
-import Details from '../auth-pages/account-details'
-import Login from '../components/account-loading'
+import Login from '../components/login'
 
 import { login, isAuthenticated, getProfile } from '../utils/auth'
 
@@ -15,14 +14,14 @@ const Account = () => {
 
   if (isAuthenticated()) {
     setUser(getProfile())
+    setAuth(true)
   }
 
   return (
     <AccountLayout>
-      {auth ? (
+      {!auth ? (
         <Router>
-          <Home path='/account/' user={user} />
-          <Details path='/acount/details' />
+          <Home path='/account/' />
         </Router>
       ) : (
         <Login />

@@ -1,0 +1,27 @@
+# User Schema
+type User {
+  lastName: String!
+  firstName: String!
+  email: String!
+  connections: [UserConnections]
+}
+
+type UserConnections {
+  user: User! @relation
+  creationDate: Time!
+  connections: [Connection!]
+}
+
+type Connection {
+  userConnection: UserConnections @relation
+  title: String!
+  chapterId: String!
+  ArticleId: String
+  PartId: String
+  connection: [String!]!
+}
+
+type Query {
+  allUserConnections: [UserConnections!]!
+  findUserConnectionByChapter(chapterId: String!): [Connection!]!
+}

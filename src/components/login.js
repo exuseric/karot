@@ -1,14 +1,16 @@
 import React from 'react'
-import style from '../styles/account-loading.module.scss'
+import style from '../styles/login.module.scss'
 import Header from './header'
 import LoginButton from './login-button'
-import ConnectForm from '../components/form/connect-form'
+import ConnectForm from './form/connect-form'
+import SEO from './seo'
 
 const Login = () => {
   return (
-    <div className={`${style.loading}`}>
+    <div className={`${style.login}`}>
+      <SEO title='Account | Login' />
       <Header title='You are not logged in! Please login to continue.' />
-      <LoginButton />
+      <LoginButton type='auth-btn' />
       <ConnectForm />
     </div>
   )

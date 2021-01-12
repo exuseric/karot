@@ -9,8 +9,12 @@ body {
   background-color: color('main-bg');
 }
 
+button {
+  cursor: pointer;
+}
+
 .main {
-  max-width: 1240px;
+  max-width: 1700px;
   height: 100%;
 
   margin: auto;
@@ -20,12 +24,13 @@ body {
 .content {
   position: relative;
 
-  max-width: 800px;
+  width: 100%;
   min-height: 100vh;
   height: 100%;
 
   padding: ($nav-height * 1.5) 2rem;
   margin: auto;
+
 }
 
 .header {
@@ -145,4 +150,17 @@ body {
 
 	border: 2px dotted currentColor;
 	border-radius: 0.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  #auth-btn {
+    width: 6rem;
+    height: 2.4rem;
+
+    margin: auto;
+
+    font-size: scale('sm');
+
+    border-radius: 30px;
+  }
 }

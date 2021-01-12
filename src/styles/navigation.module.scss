@@ -10,7 +10,7 @@
 
 
   width: 100%;
-  height: max-content;
+  height: $nav-height;
 
 
   background-color: color('light-bg');
@@ -24,11 +24,7 @@
     padding: 0 2rem;
 
   }
-  .menu {
-    @include grid(row, 0.8rem);
 
-    background-color: inherit;
-  }
   .logo,
   .nav__menu_btn {
     width: 3rem;
@@ -46,11 +42,9 @@
 }
 
 .menu {
+  @include grid(row, 0.8rem);
   padding: 2rem 0;
-
-  .account_menu {
-    border-bottom: 1px solid color('neutral');
-  }
+  background-color: color('light-bg');
 }
 
 .menu_btn {
@@ -58,7 +52,7 @@
   padding-right: 2rem;
 
   color: color('dark-text');
-  background-color: color('light-bg');
+  background-color: color('neutral');
 
   span {
     @include center;
@@ -70,10 +64,10 @@
 .menu_links {
   @include grid(row, 0.8rem);
 
-  .menu_link {
-    display: flex;
-    padding: 1.5rem;
-  }
+}
+.menu_link {
+  display: flex;
+  padding: 1.5rem;
 }
 
 .show_menu {
@@ -94,4 +88,26 @@
 }
 .flip_down {
   transform: rotateZ(0deg)
+}
+
+
+@media screen and (min-width: 768px) {
+  .nav,
+  .menu {
+    @include content(space-between, row);
+  }
+
+  .menu_link,
+  .menu {
+    padding: 0.2rem;
+  }
+  .menu_links {
+    @include grid(column, 0.8rem);
+  }
+  .nav__menu_btn {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    // pointer-events: none;
+  }
 }

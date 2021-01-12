@@ -1,5 +1,5 @@
 [build]
-	functions="src/netlify/functions"
+	functions="functions"
 	command="npm run build"
 	publish="public"
 [[redirects]]

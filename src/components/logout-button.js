@@ -1,13 +1,22 @@
 import React from 'react'
-import { logout } from '../utils/auth'
-import style from '../styles/form.module.scss'
+import PropTypes from 'prop-types'
 
-const LogoutButton = () => {
+import { logout } from '../utils/auth'
+import style from '../styles/navigation.module.scss'
+
+const LogoutButton = ({ type }) => {
   return (
-    <button type='submit' className={`button btn-default ${style.form_submit}`} onClick={() => logout()}>
+    <button type='button' className={`button btn-default`} id={`${type}`} onClick={() => logout()}>
       Logout
     </button>
   )
 }
 
 export default LogoutButton
+
+LogoutButton.defaultProps = {
+  type: ''
+}
+LogoutButton.propTypes = {
+  type: PropTypes.string
+}

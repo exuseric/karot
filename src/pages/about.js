@@ -12,7 +12,7 @@ const About = () => {
       <SEO title={title} />
       <ImageHeader title={title} />
       <div className={`${style.about_content}`}>
-        <article>
+        <article className={`${style.content}`}>
           <header className={`header text-center`}>
             <h1 className={`subtitle text-md`}>What is karot?</h1>
           </header>
@@ -25,7 +25,7 @@ const About = () => {
             production business.
           </p>
         </article>
-        <article>
+        <article className={`${style.content}`}>
           <header className={`header text-center`}>
             <h1 className={`subtitle text-md`}>How does this work?</h1>
           </header>

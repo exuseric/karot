@@ -17,3 +17,23 @@
 	gap: $gap;
 	align-items: center;
 }
+
+@mixin grid12 {
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	grid-auto-rows: auto;
+	align-items: center;
+}
+
+@mixin grid12row2 {
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	grid-template-rows: 30% 60vh;
+	align-items: center;
+}
+
+@mixin media {
+	@media screen and (min-width: 768px) {
+		@content
+	}
+}
