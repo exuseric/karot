@@ -1,17 +1,15 @@
-import React, { useContext, useState, useEffect } from 'react'
-import { CstContext } from '../store/constitution'
+import React, { useState, useEffect } from 'react'
 
 const Constitution = () => {
-  const { GET_ALL_CHAPTERS } = useContext(CstContext)
   const [chapters, setChapters] = useState([])
 
-  const allChapters = () => {
-    const res = GET_ALL_CHAPTERS()
-    console.log(res)
+  const allChapters = async () => {
+    const res = await fetch('/api/fauna-constitution/?q=getAllChapters')
+    const data = await res.json()
+    setChapters(data)
   }
   useEffect(() => {
     allChapters()
-    // if (data !== undefined) setChapters(data)
   }, [])
 
   return <div className={`connections`}>{}</div>

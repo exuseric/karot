@@ -1,19 +1,18 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 
-import { CstContext } from '../../store/constitution'
 import style from '../../styles/form.module.scss'
 import SearchIcon from '../../images/icons/search.inline.svg'
 
 const ConnectForm = () => {
-  const { GET_ALL_CHAPTERS } = useContext(CstContext)
   const [connections, setConnectios] = useState([])
   const [notFound, setNotFound] = useState(false)
   const [found, setFound] = useState(false)
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault()
     const { value } = e.target
-    const connection = GET_ALL_CHAPTERS().filter((connection) => connection.tags.contains(value))
+    const { data } = await axios.get('/api/fauna-constitution/?q=getConnections')
+    const connection = data.filter((connection) => connection.tags.contains(value))
     if (connection.length !== 0) {
       setConnectios(connections)
       setFound(true)
@@ -44,15 +43,10 @@ const ConnectForm = () => {
         </div>
         <div className={`${style.form_group}`}></div>
       </div>
-
-      {/* <div className={`${style.form_connections}`}>
+      <div className={`${style.form_connections}`}>
         {notFound ? <EmptyCard /> : null}
-        {found
-          ? connections.map((connection) => ({
-              <ConnectionCard />
-            }))
-          : null}
-      </div> */}
+        {found ? connections.map((connection) => connection !== undefined && <ConnectionCard />) : null}
+      </div>
     </form>
   )
 }

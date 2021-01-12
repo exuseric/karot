@@ -1,16 +1,26 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import Layout from '../layouts/default-layout'
 import SEO from '../components/seo'
 import ImageHeader from '../components/image-header'
 import Header from '../components/header'
 import ConnectForm from '../components/form/connect-form'
 import Constitution from '../components/constitution'
-import { CstContext } from '../store/constitution'
+import { CstContext, CstProvider } from '../store/constitution'
 import style from '../styles/connections.module.scss'
 
 const Connections = () => {
   const title = 'connections'
-  const { allConnections } = useContext(CstContext)
+  const [allConnections, setAllConnections] = useState([])
+  
+  const getConnections = async () => {
+	const { data } = await axios.get('/api/fauna-constitution/?q=getConnections')
+    if(data!==undefined) setAllConnections(data)
+  }
+
+  useEffect(() => {
+	  getConnections()
+  }, [])
   return (
     <Layout>
       <SEO title={title} />

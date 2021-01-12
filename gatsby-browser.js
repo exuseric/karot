@@ -1,6 +1,6 @@
 import React from 'react'
+
 import { silentAuth } from './src/utils/auth'
-import { CstProvider } from './src/store/constitution'
 
 import './src/styles/global.scss'
 
@@ -21,13 +21,7 @@ class SessionCheck extends React.Component {
   }
 
   render() {
-    return (
-      this.state.loading === false && (
-        <React.Fragment>
-          <CstProvider>{this.props.children}</CstProvider>
-        </React.Fragment>
-      )
-    )
+    return this.state.loading === false && <React.Fragment>{this.props.children}</React.Fragment>
   }
 }
 
